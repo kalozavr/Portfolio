@@ -156,6 +156,7 @@ form.addEventListener("submit", async (event) => {
       throw new Error("Unable to send message.");
     }
 
+    statusMessage.textContent = "";
     successMessage.textContent =
       "Message sent successfully. I will get back to you soon.";
     form.reset();

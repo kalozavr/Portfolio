@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Portfolio of Ilia Dagargulia, Computer Science student focused on backend development with C# and .NET."
+  />
+  <meta name="author" content="Ilia Dagargulia" />
+  <title>Ilia Dagargulia | Junior Backend Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <nav class="navbar container" aria-label="Primary navigation">
+        <a class="brand" href="#hero">
+          <span class="brand-mark">ID</span>
+          <span>Ilia Dagargulia</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Open navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-panel" id="nav-menu">
+          <ul class="nav-links">
+            <li><a href="#about-me">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero container" id="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Junior Backend Developer</p>
+          <h1>Building practical backend solutions with C# and .NET.</h1>
+          <p class="hero-text">
+            I am a Computer Science student focused on writing clean code, solving
+            real problems, and growing into a strong full-stack developer.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">View Projects</a>
+            <a class="button secondary" href="#contact">Contact Me</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Quick profile summary">
+          <p class="card-label">Current Focus</p>
+          <ul>
+            <li>C# / .NET development</li>
+            <li>ASP.NET Core and EF Core</li>
+            <li>Databases and application logic</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="section container" id="about-me">
+        <div class="section-heading">
+          <p class="eyebrow">About</p>
+          <h2>About Me</h2>
+        </div>
+        <div class="about-grid">
+          <p>
+            I am a Computer Science student focused on backend development with C#
+            and .NET. I have hands-on experience building applications that work
+            with databases, handle user input, and implement real-world logic.
+          </p>
+          <p>
+            I enjoy solving practical problems, improving my code, and continuously
+            learning new technologies. Currently, I am expanding my skills in
+            ASP.NET, EF Core, and JavaScript to build full-stack applications.
+          </p>
+        </div>
+      </section>
+
+      <section class="section container" id="projects">
+        <div class="section-heading">
+          <p class="eyebrow">Work</p>
+          <h2>Projects</h2>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <h3>Portfolio Website</h3>
+            <p>
+              A responsive portfolio website built using semantic HTML and CSS.
+              Focused on clean structure, accessibility, and clear presentation of
+              projects and skills.
+            </p>
+          </article>
+
+          <article class="project-card">
+            <h3>To-Do List Application (WPF)</h3>
+            <p>
+              A desktop task management application built with C# and WPF using the
+              MVVM pattern. Implemented features for adding, editing, and removing
+              tasks, with focus on clean UI, data binding, and application
+              structure.
+            </p>
+          </article>
+
+          <article class="project-card">
+            <h3>Currency Converter Application</h3>
+            <p>
+              A data-driven application built with C# that uses a local database to
+              store exchange rates. Focused on data handling, input validation, and
+              improving understanding of database integration.
+            </p>
+          </article>
+
+          <article class="project-card">
+            <h3>Pet Shop Management System</h3>
+            <p>
+              A console-based application for managing pets and inventory.
+              Implemented CRUD operations and structured logic for handling data
+              efficiently.
+            </p>
+          </article>
+
+          <article class="project-card">
+            <h3>ASP.NET Web API (In Progress)</h3>
+            <p>
+              Currently developing a backend API using ASP.NET Core and EF Core.
+              The project focuses on building RESTful endpoints, database
+              integration, and clean architecture.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section container" id="skills">
+        <div class="section-heading">
+          <p class="eyebrow">Stack</p>
+          <h2>Skills</h2>
+        </div>
+
+        <ul class="skills-list">
+          <li>C# / .NET</li>
+          <li>ASP.NET Core</li>
+          <li>Entity Framework Core</li>
+          <li>SQL Server</li>
+          <li>LINQ</li>
+          <li>JavaScript</li>
+          <li>HTML / CSS</li>
+          <li>Git / GitHub</li>
+        </ul>
+      </section>
+
+      <section class="section container" id="contact">
+        <div class="section-heading">
+          <p class="eyebrow">Contact</p>
+          <h2>Let's Connect</h2>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-copy">
+            <p>
+              If you would like to get in touch, feel free to send a message using
+              the form.
+            </p>
+            <p class="contact-email">Email: ilia.dagargulia@gmail.com</p>
+          </div>
+
+          <form id="contactForm" class="contact-form" novalidate>
+            <input type="hidden" name="_subject" value="New portfolio contact message" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" />
+
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your full name"
+                required
+              />
+              <small class="error-message"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email address"
+                required
+              />
+              <small class="error-message"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="Write your message here"
+                required
+              ></textarea>
+              <small class="error-message"></small>
+            </div>
+
+            <button class="button primary submit-button" type="submit">
+              Send Message
+            </button>
+            <p id="formSuccess" class="success-message" aria-live="polite"></p>
+            <p id="formStatus" class="status-message" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2026 Ilia Dagargulia</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

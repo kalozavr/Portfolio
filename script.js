@@ -157,7 +157,7 @@ form.addEventListener("submit", async (event) => {
     }
 
     successMessage.textContent =
-      "Message sent successfully. Check your inbox for the first activation email if this is your first submission.";
+      "Message sent successfully. I will get back to you soon.";
     form.reset();
     Object.values(fields).forEach((field) => clearError(field.input));
   } catch (error) {

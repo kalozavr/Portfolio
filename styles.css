@@ -15,6 +15,19 @@
   --container: 1120px;
 }
 
+[data-theme="dark"] {
+  --bg: #151311;
+  --bg-accent: #201b17;
+  --surface: rgba(31, 27, 24, 0.82);
+  --surface-strong: #201b17;
+  --text: #f5efe8;
+  --muted: #c0b0a2;
+  --line: rgba(245, 239, 232, 0.1);
+  --accent: #f0a464;
+  --accent-deep: #ffc18f;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -30,8 +43,9 @@ body {
   background:
     radial-gradient(circle at top left, rgba(196, 106, 47, 0.16), transparent 30%),
     radial-gradient(circle at top right, rgba(160, 95, 53, 0.1), transparent 28%),
-    linear-gradient(180deg, #f8f5ef 0%, var(--bg) 100%);
+    linear-gradient(180deg, var(--bg-accent) 0%, var(--bg) 100%);
   min-height: 100vh;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 body.menu-open {
@@ -63,14 +77,15 @@ textarea {
   top: 0;
   z-index: 20;
   backdrop-filter: blur(18px);
-  background: rgba(248, 245, 239, 0.72);
-  border-bottom: 1px solid rgba(29, 26, 23, 0.06);
+  background: color-mix(in srgb, var(--bg-accent) 72%, transparent);
+  border-bottom: 1px solid var(--line);
 }
 
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.75rem;
   min-height: 84px;
 }
 
@@ -94,11 +109,10 @@ textarea {
   box-shadow: 0 10px 25px rgba(196, 106, 47, 0.28);
 }
 
+.theme-toggle,
 .nav-toggle {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.35rem;
+  display: inline-grid;
+  place-items: center;
   width: 3rem;
   height: 3rem;
   border: 0;
@@ -106,6 +120,66 @@ textarea {
   background: var(--surface-strong);
   box-shadow: var(--shadow);
   cursor: pointer;
+}
+
+.theme-toggle {
+  position: relative;
+  margin-left: auto;
+  color: var(--text);
+  overflow: visible;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.nav-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  overflow: visible;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible,
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  transform: translateY(-2px);
+}
+
+.theme-icon {
+  grid-area: 1 / 1;
+  display: inline-grid;
+  place-items: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.theme-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+.theme-icon-sun {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.theme-icon-moon {
+  opacity: 0;
+  transform: scale(0.65);
+}
+
+[data-theme="dark"] .theme-icon-sun {
+  opacity: 0;
+  transform: scale(0.65);
+}
+
+[data-theme="dark"] .theme-icon-moon {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .nav-toggle span {
@@ -135,7 +209,7 @@ textarea {
   padding: 1rem;
   border: 1px solid var(--line);
   border-radius: 24px;
-  background: rgba(255, 255, 255, 0.95);
+  background: color-mix(in srgb, var(--surface-strong) 94%, transparent);
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow);
   opacity: 0;
@@ -167,11 +241,20 @@ textarea {
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
+[data-theme="dark"] .nav-links a {
+  background: #2a2420;
+}
+
 .nav-links a:hover,
 .nav-links a:focus-visible {
   background: #ead9c2;
   color: var(--accent-deep);
   transform: translateX(4px);
+}
+
+[data-theme="dark"] .nav-links a:hover,
+[data-theme="dark"] .nav-links a:focus-visible {
+  background: #3a312b;
 }
 
 .hero {
@@ -262,7 +345,7 @@ textarea {
 .contact-form,
 .contact-copy,
 .about-grid p {
-  border: 1px solid rgba(29, 26, 23, 0.08);
+  border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background: var(--surface);
   backdrop-filter: blur(14px);
@@ -349,6 +432,10 @@ textarea {
   font-weight: 600;
 }
 
+[data-theme="dark"] .skills-list li {
+  background: rgba(34, 29, 25, 0.92);
+}
+
 .contact-grid {
   display: grid;
   gap: 1rem;
@@ -382,6 +469,11 @@ textarea {
   background: #fffdf9;
   color: var(--text);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group textarea {
+  background: #221d19;
 }
 
 .form-group input:focus,

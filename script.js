@@ -1,7 +1,31 @@
+const root = document.documentElement;
+const themeToggle = document.querySelector(".theme-toggle");
 const navToggle = document.querySelector(".nav-toggle");
 const navPanel = document.querySelector(".nav-panel");
 const navLinks = document.querySelectorAll(".nav-links a");
 const body = document.body;
+const savedTheme = localStorage.getItem("portfolio-theme");
+
+const applyTheme = (theme) => {
+  root.setAttribute("data-theme", theme);
+
+  const nextThemeLabel =
+    theme === "dark" ? "Switch to light mode" : "Switch to dark mode";
+
+  themeToggle.setAttribute("aria-label", nextThemeLabel);
+  themeToggle.setAttribute("title", nextThemeLabel);
+};
+
+applyTheme(savedTheme === "dark" ? "dark" : "light");
+
+themeToggle.addEventListener("click", () => {
+  const currentTheme =
+    root.getAttribute("data-theme") === "dark" ? "dark" : "light";
+  const nextTheme = currentTheme === "dark" ? "light" : "dark";
+
+  applyTheme(nextTheme);
+  localStorage.setItem("portfolio-theme", nextTheme);
+});
 
 const setMenuState = (isOpen) => {
   navToggle.setAttribute("aria-expanded", String(isOpen));

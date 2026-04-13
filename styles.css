@@ -402,6 +402,8 @@ textarea {
 
 .project-card {
   padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card h3 {
@@ -413,6 +415,18 @@ textarea {
 .project-card p {
   margin: 0;
   line-height: 1.75;
+}
+
+.project-link {
+  margin-top: 1rem;
+  font-weight: 700;
+  color: var(--accent-deep);
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
 .skills-list {

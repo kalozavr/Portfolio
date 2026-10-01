@@ -266,6 +266,7 @@ textarea {
 .hero-copy,
 .hero-card,
 .project-card,
+.cert-card,
 .contact-form,
 .contact-copy,
 .about-grid p {
@@ -292,6 +293,7 @@ textarea {
 .hero-text,
 .section-heading + *,
 .project-card p,
+.cert-card p,
 .contact-copy p,
 .about-grid p {
   color: var(--muted);
@@ -342,6 +344,7 @@ textarea {
 
 .hero-card,
 .project-card,
+.cert-card,
 .contact-form,
 .contact-copy,
 .about-grid p {
@@ -400,23 +403,44 @@ textarea {
   gap: 1rem;
 }
 
-.project-card {
+.project-card,
+.cert-card {
   padding: 1.4rem;
   display: flex;
   flex-direction: column;
   min-height: 100%;
 }
 
-.project-card h3 {
+.project-card h3,
+.cert-card h3 {
   margin-top: 0;
   margin-bottom: 0.7rem;
   font-size: 1.15rem;
 }
 
-.project-card p {
+.project-card p,
+.cert-card p {
   margin: 0;
   line-height: 1.75;
   flex-grow: 1;
+}
+
+.projects-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.certifications-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.cert-card .cert-issuer {
+  margin: 0 0 0.7rem;
+  font-weight: 700;
+  color: var(--text);
+  flex-grow: 0;
 }
 
 .project-link {
@@ -572,7 +596,8 @@ textarea {
   }
 
   .about-grid,
-  .contact-grid {
+  .contact-grid,
+  .certifications-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
